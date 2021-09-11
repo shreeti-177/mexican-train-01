@@ -33,7 +33,7 @@ private:
 	Human humanPlayerSub;
 	//Computer computerPlayer;
 	Player* human = &humanPlayer;
-	Player* humanSub = &humanPlayer;
+	Player* humanSub = &humanPlayerSub;
 	//Player* computer = &computerPlayer;
 	Round round;
 };

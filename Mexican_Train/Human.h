@@ -12,6 +12,8 @@ public:
 
 	void PrintHand();
 
+	void Play();
+
 private:
 	std::vector<Tile> m_hand;
 };

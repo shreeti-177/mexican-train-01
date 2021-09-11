@@ -19,12 +19,15 @@ void Game::StartGame() {
 
 	//Once round is set up, alternate player turns
 	int counter = 0;
-	for(int i=0;i<10;i++){
+	do{
 		//Play for player
-		players[0]->Play();
+		players[counter%2]->Play();
 		counter++;
-	}
-	//while (players[0]->GetHandSize() > 0 && players[1]->GetHandSize() > 0 && currRound.GetBoneyardSize() > 0);
+
+		if (counter == 20) {
+			break;
+		}
+	} while (players[0]->GetHandSize() > 0 && players[1]->GetHandSize() > 0 && currRound.GetBoneyardSize() > 0);
 }
 
 Round Game::SetUpRound() {

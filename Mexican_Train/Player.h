@@ -25,7 +25,7 @@ public:
 	virtual int GetHandSize() = 0;
 	virtual void PrintHand() = 0;
 
-	void Play();
+	virtual void Play()=0;
 
 
 private:

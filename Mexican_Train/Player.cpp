@@ -8,6 +8,6 @@ Player::Player() {
 	this->totalWins = 0;
 }
 
-void Player::Play() {
-	cout << "Here" << endl;
-}
+//void Player::Play() {
+//	cout << "Here" << endl;
+//}

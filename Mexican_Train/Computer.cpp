@@ -17,5 +17,9 @@ void Computer::PrintHand() {
 	cout << endl;
 }
 
+void Computer::Play() {
+	cout << "Computer" << endl;
+}
+
 
 

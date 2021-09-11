@@ -17,3 +17,7 @@ void Human::PrintHand() {
 	cout << endl;
 
 }
+
+void Human::Play() {
+
+}
