@@ -17,6 +17,10 @@ public:
 	bool IsDouble();
 	bool operator==(const Tile);
 
+	bool Contains(const int);
+	bool Matches(Tile);
+
+	void Flip();
 
 private:
 	int left;

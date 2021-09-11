@@ -22,4 +22,6 @@ void Human::Play() {
 	vector<Tile> eligibleTiles;
 	vector<int> originalIndexes;
 
+
+
 }

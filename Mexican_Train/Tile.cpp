@@ -20,5 +20,16 @@ bool Tile::operator==(const Tile a_tile) {
 	return (this->left == a_tile.left && this->right == a_tile.right);
 }
 
+bool Tile::Contains(const int a_side) {
+	return a_side == this->left || a_side == this->right;
+}
 
+bool Tile::Matches(Tile a_tile) {
+	return a_tile.Contains(this->left) || a_tile.Contains(this->right);
+}
 
+void Tile::Flip() {
+	int tmp = this->right;
+	this->right = this->left;
+	this->left = tmp;
+}
