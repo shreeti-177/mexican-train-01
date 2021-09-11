@@ -61,4 +61,7 @@ void Round::SetBoneyard(vector<Tile>& a_deck) {
 		cout << m_boneyard.at(i)<<"      ";
 	}
 	cout << endl;
+	cout << endl;
+	cout << "==================================================================" << endl;
+	cout << endl;
 }
