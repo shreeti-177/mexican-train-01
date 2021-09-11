@@ -20,6 +20,7 @@ void Game::StartGame() {
 	//Once round is set up, alternate player turns
 	int counter = 0;
 	for(int i=0;i<10;i++){
+		//Play for player
 		players[0]->Play();
 		counter++;
 	}
