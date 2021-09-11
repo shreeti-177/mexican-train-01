@@ -50,7 +50,8 @@ Round Game::SetUpRound() {
 
 	//shuffle and distribute 16 each to all players
 	currRound.AssignHand(GetHumanPlayer(),startingDeck);
-	currRound.AssignHand(GetComputerPlayer(), startingDeck);
+	currRound.AssignHand(GetHumanSubPlayer(), startingDeck);
+	//currRound.AssignHand(GetComputerPlayer(), startingDeck);
 
 	//Set Boneyard
 	currRound.SetBoneyard(startingDeck);
@@ -81,18 +82,22 @@ void Game::PromptCoinToss() {
 	if (side == 'H' && tossValue == 1) {
 		cout << "The dice rolled Heads. You go first!!" << endl;
 		players[0] = GetHumanPlayer();
-		players[1] = GetComputerPlayer();
+		players[1] = GetHumanSubPlayer();
+		//players[1] = GetComputerPlayer();
 
 	}
 	else if (side == 'T' && tossValue == 0) {
 		cout << "The dice rolled Tails. You go first!!" << endl;
 		players[0] = GetHumanPlayer();
-		players[1] = GetComputerPlayer();
+		players[1] = GetHumanSubPlayer();
+
+		//players[1] = GetComputerPlayer();
 
 	}
 	else {
 		cout << "Computer goes first!" << endl;
-		players[0] = GetComputerPlayer();
+		//players[0] = GetComputerPlayer();
+		players[0] = GetHumanSubPlayer();
 		players[1] = GetHumanPlayer();
 	}
 	cout << endl;

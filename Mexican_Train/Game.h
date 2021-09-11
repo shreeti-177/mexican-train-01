@@ -21,16 +21,20 @@ public:
 	void PromptCoinToss();
 
 	inline Player* GetHumanPlayer() { return human; }
-	inline Player* GetComputerPlayer() { return computer; }
+	inline Player* GetHumanSubPlayer() { return humanSub; }
+
+	//inline Player* GetComputerPlayer() { return computer; }
 
 	Player* GetPlayers();
 
 private:
 	Player* players[2];
 	Human humanPlayer;
-	Computer computerPlayer;
+	Human humanPlayerSub;
+	//Computer computerPlayer;
 	Player* human = &humanPlayer;
-	Player* computer = &computerPlayer;
+	Player* humanSub = &humanPlayer;
+	//Player* computer = &computerPlayer;
 	Round round;
 };
 

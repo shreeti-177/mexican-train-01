@@ -27,7 +27,7 @@ void Round::SetEngine() {
 		engineNum = 10 + engineNum;
 	}
 	this->m_engine = Tile(engineNum, engineNum);
-	//cout << "Engine Tile: " << m_engine << endl;
+	cout << "Engine Tile: " << m_engine << endl;
 	cout << endl;
 	cout << "==================================================================" << endl;
 	cout << endl;
@@ -58,6 +58,7 @@ void Round::SetBoneyard(vector<Tile>& a_deck) {
 	this->m_boneyard = a_deck;
 	cout << "Boneyard Size: " << m_boneyard.size() << endl;
 	for (int i = 0; i < m_boneyard.size(); i++) {
-		cout << m_boneyard.at(i).GetTileLeft() << " | " << m_boneyard.at(i).GetTileRight() << endl;
+		cout << m_boneyard.at(i)<<"      ";
 	}
+	cout << endl;
 }

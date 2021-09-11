@@ -2,9 +2,7 @@
 #include<iostream>
 #include<vector>
 
-//std::ostream &operator<< (std::ostream &os, Tile& a_tile) {
-//	return os << a_tile.GetTileLeft() << " | " << a_tile.GetTileRight();
-//}
+
 
 class Tile
 {
@@ -25,4 +23,8 @@ private:
 	int right;
 
 };
+
+inline std::ostream &operator<< (std::ostream &os, Tile& a_tile) {
+	return os << a_tile.GetTileLeft() << " | " << a_tile.GetTileRight();
+}
 

@@ -12,7 +12,8 @@ void Human::PrintHand() {
 	vector<Tile>& vec = GetHumanHand();
 	cout << "Human Hand Size: " << vec.size() << endl;
 	for (int i = 0; i < vec.size(); i++) {
-		cout << "Human Hand: "<<vec.at(i).GetTileLeft() << " | " << vec.at(i).GetTileRight() << endl;
+		cout << vec.at(i)<<"      ";
 	}
+	cout << endl;
 
 }
