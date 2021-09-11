@@ -16,5 +16,7 @@ public:
 
 private:
 	std::vector<Tile> m_hand;
+	std::list<Tile> m_personalTrain;
+	
 };
 

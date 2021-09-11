@@ -19,5 +19,7 @@ void Human::PrintHand() {
 }
 
 void Human::Play() {
+	vector<Tile> eligibleTiles;
+	vector<int> originalIndexes;
 
 }

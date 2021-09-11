@@ -8,23 +8,24 @@ class Round
 {
 public:
 	Round() {};
-	Round(int);
 	~Round() {};
 
-	void SetRoundNumber(int);
-	int GetRoundNumber();
+	static void SetRoundNumber(int);
+	static int GetRoundNumber();
 
-	void SetEngine();
-	Tile GetEngine();
+	static void SetEngine();
+	static Tile GetEngine();
 
-	void AssignHand(Player*,std::vector<Tile> &);
+	static void AssignHand(Player*,std::vector<Tile> &);
 
-	void SetBoneyard(std::vector<Tile>&);
-	inline int GetBoneyardSize() { return m_boneyard.size(); }
+	static void SetBoneyard(std::vector<Tile>&);
+	static inline int GetBoneyardSize() { return m_boneyard.size(); }
 
 private:
-	int m_roundNumber;
-	Tile m_engine;
-	std::vector<Tile> m_boneyard;
+	static int m_roundNumber;
+	static Tile m_engine;
+	static std::vector<Tile> m_boneyard;
 };
+
+
 

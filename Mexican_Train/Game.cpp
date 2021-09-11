@@ -15,7 +15,8 @@ void Game::StartGame() {
 	PromptCoinToss();
 
 	//Set up state variables for the round
-	Round currRound = SetUpRound();
+	//Round currRound = SetUpRound();
+	SetUpRound();
 
 	//Once round is set up, alternate player turns
 	int counter = 0;
@@ -27,40 +28,72 @@ void Game::StartGame() {
 		if (counter == 20) {
 			break;
 		}
-	} while (players[0]->GetHandSize() > 0 && players[1]->GetHandSize() > 0 && currRound.GetBoneyardSize() > 0);
+	} while (players[0]->GetHandSize() > 0 && players[1]->GetHandSize() > 0 && Round::GetBoneyardSize() > 0);
 }
 
-Round Game::SetUpRound() {
+void Game::SetUpRound() {
 
 	//Assign round number
 	int roundNum = 1;
-	Round currRound(roundNum);
+	Round::SetRoundNumber(roundNum);
 	cout << "Round: " << roundNum << endl;
-
-
+	
+	
 	//If round number != 1, prompt coin toss to decide 
 	//who goes first in the next round
-
+	
 	//Based on round number, set engine
-	currRound.SetEngine();
-
+	Round::SetEngine();
+	
 	//Initialize the starting deck without the engine tile
 	Deck deck;
-	deck.InitializeDeck(currRound.GetEngine());
-	
+	deck.InitializeDeck(Round::GetEngine());
+		
 	//Get starting deck
 	vector<Tile>& startingDeck = deck.GetDeck();
-
+	
 	//shuffle and distribute 16 each to all players
-	currRound.AssignHand(GetHumanPlayer(),startingDeck);
-	currRound.AssignHand(GetHumanSubPlayer(), startingDeck);
+	Round::AssignHand(GetHumanPlayer(),startingDeck);
+	Round::AssignHand(GetHumanSubPlayer(), startingDeck);
 	//currRound.AssignHand(GetComputerPlayer(), startingDeck);
-
+	
 	//Set Boneyard
-	currRound.SetBoneyard(startingDeck);
-
-	return currRound;
+	Round::SetBoneyard(startingDeck);
+	
 }
+
+
+//Round Game::SetUpRound() {
+//
+//	//Assign round number
+//	int roundNum = 1;
+//	Round currRound(roundNum);
+//	cout << "Round: " << roundNum << endl;
+//
+//
+//	//If round number != 1, prompt coin toss to decide 
+//	//who goes first in the next round
+//
+//	//Based on round number, set engine
+//	currRound.SetEngine();
+//
+//	//Initialize the starting deck without the engine tile
+//	Deck deck;
+//	deck.InitializeDeck(currRound.GetEngine());
+//	
+//	//Get starting deck
+//	vector<Tile>& startingDeck = deck.GetDeck();
+//
+//	//shuffle and distribute 16 each to all players
+//	currRound.AssignHand(GetHumanPlayer(),startingDeck);
+//	currRound.AssignHand(GetHumanSubPlayer(), startingDeck);
+//	//currRound.AssignHand(GetComputerPlayer(), startingDeck);
+//
+//	//Set Boneyard
+//	currRound.SetBoneyard(startingDeck);
+//
+//	return currRound;
+//}
 
 
 void Game::PromptCoinToss() {

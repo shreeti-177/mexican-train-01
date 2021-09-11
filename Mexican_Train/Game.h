@@ -17,7 +17,8 @@ public:
 	~Game() {};
 
 	void StartGame();
-	Round SetUpRound();
+	//Round SetUpRound();
+	void SetUpRound();
 	void PromptCoinToss();
 
 	inline Player* GetHumanPlayer() { return human; }

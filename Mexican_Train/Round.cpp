@@ -5,17 +5,17 @@
 
 using namespace std;
 
+int Round::m_roundNumber = 0;
+Tile Round::m_engine;
+vector<Tile> Round::m_boneyard;
 
-Round::Round(int a_roundNumber) {
-	this->m_roundNumber = a_roundNumber;
-}
 
 void Round::SetRoundNumber(int a_roundNumber) {
-	this->m_roundNumber = a_roundNumber;
+	m_roundNumber = a_roundNumber;
 }
 
 int Round::GetRoundNumber() {
-	return this->m_roundNumber;
+	return m_roundNumber;
 }
 
 void Round::SetEngine() {
@@ -26,7 +26,7 @@ void Round::SetEngine() {
 	if (engineNum < 0) {
 		engineNum = 10 + engineNum;
 	}
-	this->m_engine = Tile(engineNum, engineNum);
+	m_engine = Tile(engineNum, engineNum);
 	cout << "Engine Tile: " << m_engine << endl;
 	cout << endl;
 	cout << "==================================================================" << endl;
@@ -34,7 +34,7 @@ void Round::SetEngine() {
 }
 
 Tile Round::GetEngine() {
-	return this->m_engine;
+	return m_engine;
 }
 
 
@@ -55,7 +55,7 @@ void Round::AssignHand(Player* a_player, vector<Tile>& a_deck) {
 }
 
 void Round::SetBoneyard(vector<Tile>& a_deck) {
-	this->m_boneyard = a_deck;
+	m_boneyard = a_deck;
 	cout << "Boneyard Size: " << m_boneyard.size() << endl;
 	for (int i = 0; i < m_boneyard.size(); i++) {
 		cout << m_boneyard.at(i)<<"      ";

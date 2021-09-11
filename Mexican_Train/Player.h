@@ -1,6 +1,8 @@
 #pragma once
 #include<vector>
 #include<iostream>
+#include<list>
+
 #include "Tile.h"
 
 
