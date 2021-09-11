@@ -53,8 +53,11 @@ void Game::SetUpRound() {
 	vector<Tile>& startingDeck = deck.GetDeck();
 	
 	//shuffle and distribute 16 each to all players
-	Round::AssignHand(GetHumanPlayer(),startingDeck);
-	Round::AssignHand(GetHumanSubPlayer(), startingDeck);
+	GetHumanPlayer()->AssignHand(startingDeck);
+	GetHumanSubPlayer()->AssignHand(startingDeck);
+
+	//Round::AssignHand(GetHumanPlayer(),startingDeck);
+	//Round::AssignHand(GetHumanSubPlayer(), startingDeck);
 	//currRound.AssignHand(GetComputerPlayer(), startingDeck);
 	
 	//Set Boneyard

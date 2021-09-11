@@ -21,7 +21,10 @@ void Human::PrintHand() {
 void Human::Play() {
 	vector<Tile> eligibleTiles;
 	vector<int> originalIndexes;
+	Tile engine = Round::GetEngine();
 
-
+	//if (m_personalTrain.empty()) {
+	//	m_personalTrain.push_back(engine);
+	//}
 
 }

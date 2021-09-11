@@ -3,7 +3,7 @@
 #include<iostream>
 #include<list>
 
-#include "Tile.h"
+#include"Round.h"
 
 
 class Player
@@ -26,6 +26,7 @@ public:
 	virtual void AddToHand(Tile a_tile)=0;
 	virtual int GetHandSize() = 0;
 	virtual void PrintHand() = 0;
+	void AssignHand(std::vector<Tile> &);
 
 	virtual void Play()=0;
 
