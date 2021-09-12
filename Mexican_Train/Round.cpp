@@ -7,7 +7,8 @@ using namespace std;
 
 int Round::m_roundNumber = 0;
 Tile Round::m_engine;
-vector<Tile> Round::m_boneyard;
+list<Tile> Round::m_boneyard;
+//vector<Tile> Round::m_boneyard;
 
 
 void Round::SetRoundNumber(int a_roundNumber) {
@@ -55,13 +56,31 @@ Tile Round::GetEngine() {
 //}
 
 void Round::SetBoneyard(vector<Tile>& a_deck) {
-	m_boneyard = a_deck;
+	for (int i = 0; i < a_deck.size(); i++) {
+		m_boneyard.push_back(a_deck.at(i));
+	}
+
 	cout << "Boneyard Size: " << m_boneyard.size() << endl;
-	for (int i = 0; i < m_boneyard.size(); i++) {
-		cout << m_boneyard.at(i)<<"      ";
+
+	list<Tile>::iterator it;
+
+	for (it = m_boneyard.begin(); it != m_boneyard.end();++it) {
+		cout << *it << "\t\t";
 	}
 	cout << endl;
 	cout << endl;
 	cout << "==================================================================" << endl;
 	cout << endl;
 }
+
+//void Round::SetBoneyard(vector<Tile>& a_deck) {
+//	m_boneyard = a_deck;
+//	cout << "Boneyard Size: " << m_boneyard.size() << endl;
+//	for (int i = 0; i < m_boneyard.size(); i++) {
+//		cout << m_boneyard.at(i)<<"      ";
+//	}
+//	cout << endl;
+//	cout << endl;
+//	cout << "==================================================================" << endl;
+//	cout << endl;
+//}

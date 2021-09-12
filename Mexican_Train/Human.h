@@ -16,6 +16,7 @@ public:
 
 	void Play();
 	void NextMove(std::vector<Tile>&, std::vector<int>&);
+	void DrawFromBoneyard();
 
 private:
 	std::vector<Tile> m_hand;

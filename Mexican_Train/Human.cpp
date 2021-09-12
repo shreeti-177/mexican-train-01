@@ -12,7 +12,7 @@ void Human::PrintHand() {
 	vector<Tile>& vec = GetHumanHand();
 	cout << "Human Hand Size: " << vec.size() << endl;
 	for (int i = 0; i < vec.size(); i++) {
-		cout << vec.at(i)<<"      ";
+		cout << vec.at(i)<<"\t\t";
 	}
 	cout << endl;
 	cout << endl;
@@ -34,9 +34,9 @@ void Human::Play() {
 	NextMove(eligibleTiles, originalIndexes);
 
 	//If there are no eligible tiles, draw one from boneyard
-	//if (eligibleTiles.empty()) {
-	//	DrawFromBoneyard();
-	//}
+	if (eligibleTiles.empty()) {
+		DrawFromBoneyard();
+	}
 
 	cout << endl;
 	cout << "All eligible tiles for your turn are listed above " << endl;
@@ -56,6 +56,7 @@ void Human::Play() {
 
 	Tile selectedTile = eligibleTiles.at(index - 1);
 	cout << "Your selected tile: " << selectedTile << endl;
+	cout << endl;
 
 	m_personalTrain.push_back(selectedTile);
 	RemoveFromHand(originalIndexes.at(index - 1));
@@ -83,4 +84,12 @@ void Human::NextMove(vector<Tile>& a_eligibleTiles, vector<int>& originalIndexes
 		originalIndexes.push_back(i);
 	}
 
+}
+
+
+//can be implemented in the Player class
+// check if boneyard is empty()
+// if so, pass turn to another player, maybe?!
+void Human::DrawFromBoneyard() {
+	
 }

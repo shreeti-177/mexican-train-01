@@ -1,6 +1,7 @@
 #pragma once
 
 #include<vector>
+#include<list>
 
 #include "Tile.h"
 
@@ -20,11 +21,14 @@ public:
 
 	static void SetBoneyard(std::vector<Tile>&);
 	static inline int GetBoneyardSize() { return m_boneyard.size(); }
+	static inline std::list<Tile>& GetBoneyard() { return m_boneyard; }
+	//static inline std::vector<Tile>& GetBoneyard() { return m_boneyard; }
 
 private:
 	static int m_roundNumber;
 	static Tile m_engine;
-	static std::vector<Tile> m_boneyard;
+	//static std::vector<Tile> m_boneyard;
+	static std::list<Tile> m_boneyard;
 };
 
 
