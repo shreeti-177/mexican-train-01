@@ -30,11 +30,16 @@ public:
 
 	virtual void Play()=0;
 
+	inline bool isEmptyMexicanTrain() { return m_mexicanTrain.size() == 0; }
+
+	inline std::list<Tile>& GetMexicanTrain() { return m_mexicanTrain; }
+
 
 private:
 	//vector: random access, insert/delete at end at O(1)
 	//list: no random access, insert/delete at O(1)
 	std::vector<Tile> hand;
+	std::list<Tile> m_mexicanTrain;
 	int currRoundScore;
 	int totalScore;
 	int totalWins;

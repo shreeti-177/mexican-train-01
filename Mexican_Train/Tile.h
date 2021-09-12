@@ -14,6 +14,7 @@ public:
 	inline int GetTileLeft() { return this->left; }
 	inline int GetTileRight() { return this->right; }
 	
+	bool IsMarker();
 	bool IsDouble();
 	bool operator==(const Tile);
 

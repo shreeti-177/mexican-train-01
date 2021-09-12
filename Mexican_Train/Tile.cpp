@@ -12,6 +12,9 @@ Tile::Tile(int a_left, int a_right) {
 	//std::cout << this->left << " | " << this->right << std::endl;
 }
 
+bool Tile::IsMarker() {
+	return this->left == -1 && this->right == -1;
+}
 bool Tile::IsDouble() {
 	return this->left == this->right;
 }

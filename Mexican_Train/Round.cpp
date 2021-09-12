@@ -39,22 +39,6 @@ Tile Round::GetEngine() {
 }
 
 
-//void Round::AssignHand(Player* a_player, vector<Tile>& a_deck) {
-//	//Assign 16 tiles to a player's hand from the deck
-//
-//	srand(time(NULL));
-//	//cout << "Starting size: " << a_deck.size() << endl;
-//	for (int i = 0; i < 16; i++) {
-//		int randomIndex = rand() % (a_deck.size());
-//		//cout << "Random Index: " << randomIndex << endl;
-//		Tile tile = a_deck.at(randomIndex);
-//		a_player->AddToHand(tile);
-//		a_deck.erase(a_deck.begin() + randomIndex);
-//		//cout << "Erased size: " << a_deck.size() << endl;
-//	}
-//	a_player->PrintHand();
-//}
-
 void Round::SetBoneyard(vector<Tile>& a_deck) {
 	for (int i = 0; i < a_deck.size(); i++) {
 		m_boneyard.push_back(a_deck.at(i));
@@ -72,15 +56,3 @@ void Round::SetBoneyard(vector<Tile>& a_deck) {
 	cout << "==================================================================" << endl;
 	cout << endl;
 }
-
-//void Round::SetBoneyard(vector<Tile>& a_deck) {
-//	m_boneyard = a_deck;
-//	cout << "Boneyard Size: " << m_boneyard.size() << endl;
-//	for (int i = 0; i < m_boneyard.size(); i++) {
-//		cout << m_boneyard.at(i)<<"      ";
-//	}
-//	cout << endl;
-//	cout << endl;
-//	cout << "==================================================================" << endl;
-//	cout << endl;
-//}
